@@ -26,44 +26,38 @@ public class d18_01_2024_Zadatak1 {
     String validPassword;
 
     @BeforeClass
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         validUsername = "Korisnik";
         validPassword = "Korisnik123!";
 
     }
+
     @BeforeMethod
-    public void pageSetUp(){
+    public void pageSetUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://demoqa.com/");
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         js = (JavascriptExecutor) driver;
-        WebElement bookStoreAppButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[6]/div/div[3]"));
-        js.executeScript("arguments[0].scrollIntoView(true);", bookStoreAppButton);
-        bookStoreAppButton.click();
+        List<WebElement> bookStoreAppButton = driver.findElements(By.cssSelector(".card.mt-4.top-card"));
+        js.executeScript("arguments[0].scrollIntoView(true);", bookStoreAppButton.get(5));
+        bookStoreAppButton.get(5).click();
     }
 
-    @Test
-    public void test1() throws InterruptedException {
+    @Test(priority = 10)
+    public void userCanLogInWithCookiesAddBooksInProfileAndLogOutDeletingCookies(){
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("login")));
-        WebElement logInButton = driver.findElement(By.id("login"));
-        logInButton.click();
-
-//        Cookie cookie = new Cookie("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IktvcmlzbmlrIiwicGFzc3dvcmQiOiJLb3Jpc25pazEyMyEiLCJpYXQiOjE3MDU2NjgzMzJ9.2GYeJbctonxg83osgjEPCLaAdpg307joCVOtWb0__6U");
-//        driver.manage().addCookie(cookie);
-//        driver.navigate().refresh();
-
-        WebElement usernameField = driver.findElement(By.id("userName"));
-        usernameField.sendKeys(validUsername);
-
-        WebElement passwordField = driver.findElement(By.id("password"));
-        passwordField.sendKeys(validPassword);
-
-        WebElement logIn = driver.findElement(By.id("login"));
-        logIn.click();
+        Cookie cookie = new Cookie("userName","korisnik");
+        driver.manage().addCookie(cookie);
+        Cookie cookie1 = new Cookie("userID", "394b04c8-cca1-428c-82ad-33950aeacf78");
+        driver.manage().addCookie(cookie1);
+        Cookie cookie2 = new Cookie("expires","2024-01-27T15%3A18%3A56.723Z");
+        driver.manage().addCookie(cookie2);
+        Cookie cookie3 = new Cookie("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IktvcmlzbmlrIiwicGFzc3dvcmQiOiJLb3Jpc25pazEyMyEiLCJpYXQiOjE3MDU3NjM5MzZ9.AfSxnr3nB2wxw6g9DnvwQ7Gx9YCtL85OtbYGMYN3lJg");
+        driver.manage().addCookie(cookie3);
+        driver.navigate().refresh();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("see-book-Git Pocket Guide")));
         WebElement book1 = driver.findElement(By.id("see-book-Git Pocket Guide"));
@@ -86,8 +80,9 @@ public class d18_01_2024_Zadatak1 {
         Assert.assertTrue(checkingLogInButton.isDisplayed());
 
     }
-    @Test
-    public void test2() throws InterruptedException {
+
+    @Test(priority = 20)
+    public void userCanLogInUsingLogInFormAndBooksAreStillOnProfile() throws InterruptedException {
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("login")));
         WebElement logInButton = driver.findElement(By.id("login"));
@@ -128,19 +123,20 @@ public class d18_01_2024_Zadatak1 {
         //Implicit wait se ovde nalazi jer AssertFalse prolazi bez njega
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         List<WebElement> books = driver.findElements(By.cssSelector(".rt-tr-group"));
-        for(int i = 0; i < books.size(); i++){
+        for (int i = 0; i < books.size(); i++) {
             Assert.assertTrue(books.get(i).isDisplayed());
         }
 
     }
-//    @AfterMethod
-//    public void tearDown(){
-//        driver.quit();
-//    }
 
-
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
+    }
 
 }
+
+
 
 
 
