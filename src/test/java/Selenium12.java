@@ -84,11 +84,9 @@ public class Selenium12 {
         Assert.assertNotEquals(driver.getCurrentUrl(), loggedInURL);
 
     }
-
     @Test(priority = 30)
     public void userCannotLogInWithInvalidPassword(){
         usernameField.clear();
-
         usernameField.sendKeys(validUsername);
         passwordField.clear();
         passwordField.sendKeys(invalidPassword);
@@ -106,7 +104,6 @@ public class Selenium12 {
     @Test(priority = 40)
     public void userCannotLogInWithEmptyUsernameField(){
         usernameField.clear();
-
         passwordField.sendKeys(validPassword);
         passwordField.clear();
         submitButton.click();
@@ -158,6 +155,33 @@ public class Selenium12 {
         WebElement error = driver.findElement(By.id("error"));
         Assert.assertTrue(error.isDisplayed());
         Assert.assertEquals(error.getText(), "Your username is invalid!");
+    }
+    @Test(priority = 80)
+    public void userCanLogOut(){
+        usernameField.clear();
+        usernameField.sendKeys(validUsername);
+        passwordField.clear();
+        passwordField.sendKeys(validPassword);
+        submitButton.click();
+
+        WebElement logOutButton = driver.findElement(By.linkText("Log out"));
+
+        Assert.assertTrue(logOutButton.isDisplayed());
+
+        logOutButton.click();
+
+//        Assert.assertFalse(logOutButtonAfterLoggingOut.isDisplayed());
+
+        boolean isButtonPresent = false;
+
+        try {
+            WebElement logOutButtonAfterLoggingOut = driver.findElement(By.linkText("Log out"));
+            isButtonPresent = logOutButtonAfterLoggingOut.isDisplayed();
+        } catch (Exception e){
+            System.out.println(e);
+        }
+
+        Assert.assertFalse(isButtonPresent);
     }
 
     @AfterMethod

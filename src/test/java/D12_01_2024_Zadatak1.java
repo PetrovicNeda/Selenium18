@@ -9,7 +9,7 @@ import java.time.Duration;
 
 import static org.openqa.selenium.Keys.ENTER;
 
-public class d12_01_2024_Zadatak1 {
+public class D12_01_2024_Zadatak1 {
     public static void main(String[] args) {
         /*Domaci Zadatak:
 Otici na Google, zatim preko browser-a otici na YouTube i pustiti neku pesmu po Vasem izboru.

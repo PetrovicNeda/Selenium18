@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
 
-public class p12_01_2024_Zadatak2 {
+public class P12_01_2024_Zadatak2 {
     public static void main(String[] args) {
         //Zadatak 2
 //Otvoriti browser i jos 5 tabova
@@ -53,7 +53,5 @@ public class p12_01_2024_Zadatak2 {
                 driver.close();
             }
         }
-
-
     }
 }

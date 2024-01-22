@@ -17,7 +17,5 @@ public class Selenium7 {
         WebElement button = driver.findElement(By.id("inputImage"));
 
         button.sendKeys(imageLocation);
-
-
     }
 }

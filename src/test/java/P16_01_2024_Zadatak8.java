@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class p16_01_2024_Zadatak8 {
+public class P16_01_2024_Zadatak8 {
     public static void main(String[] args) throws InterruptedException {
         //Zadatak 8
         //Testirati log in na wordpress stranicu
@@ -100,20 +100,9 @@ public class Zadatak8 {
         String usernameText = usernameTitle.getText();
 
         Assert.assertEquals(usernameText, username);
-
     }
 }
-
-
-
-
-
-
-
-         */
-
-
-
+ */
 
     }
 }

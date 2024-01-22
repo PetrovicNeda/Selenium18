@@ -14,53 +14,6 @@ public class Selenium2 {
 
         driver.get("https://www.google.com/");
 
-        //Da bi otvorili nove tabove, ili vise tabova koliko tabova jos zelimo toliko puta kucamo kod
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.open()");
-        js.executeScript("window.open()");
-        js.executeScript("window.open()");
-
-        ArrayList<String> listaTabova = new ArrayList<>(driver.getWindowHandles());
-
-        driver.switchTo().window(listaTabova.get(1));
-        driver.get("https://www.linkedin.com");
-
-        driver.switchTo().window(listaTabova.get(2));
-        driver.get("https://www.joberty.com");
-
-        driver.switchTo().window(listaTabova.get(3));
-        driver.get("https://www.youtube.com");
-
-
-        // prikaz tabova u chromu po poziciji u listi
-        // 0 -- prvi tab
-        // 0 - 1 --kada otvorimo novi tab
-        // 0 -2 -1 -- kada otvorimo novi tab dok smo na tabu 0
-        // 0 - 3 - 2 - 1 -- kada otvorimo jos jedan tab dok smo na tabu 0
-
-//        driver.close();
-//        driver.switchTo().window(listaTabova.get(2));
-//        driver.close();
-//        driver.switchTo().window(listaTabova.get(3));
-//        driver.close();
-        driver.quit();
-        /*
-        import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.ArrayList;
-
-public class Selenium2 {
-    public static void main(String[] args) {
-
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-
-        driver.get("https://www.google.com/");
-
         //Da bismo otvorili nove tabove moramo da pozovemo JavascriptExecutor kako bi mogla da se izvrsi skripta za otvaranje novih tabova
         JavascriptExecutor js = (JavascriptExecutor) driver; //Kreiram JavascriptExecutor objekat koji ce izvrsiti skriptu
         js.executeScript("window.open()"); //Izvrsavanje skripte iz parametra, odnosno otvaranje novog taba
@@ -96,12 +49,5 @@ public class Selenium2 {
 
         //Ako zelim da zatvorim sve tabove, jednostavno pozovem funkciju:
         //driver.quit();
-
-    }
-}
-         */
-
-
-
     }
 }

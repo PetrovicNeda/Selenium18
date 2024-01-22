@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
-public class p18_01_2024_Zadatak10 {
+public class P18_01_2024_Zadatak10 {
     public static void main(String[] args) throws InterruptedException {
         //Zadatak 10
 //Otici na stranicu https://imgflip.com/memegenerator
@@ -42,15 +42,6 @@ public class p18_01_2024_Zadatak10 {
         textBoxes.get(2).sendKeys("JAVA");
         textBoxes.get(1).click();
         textBoxes.get(1).sendKeys("SELENIUM");
-
-
-
-
-
-
-
-
-
     }
 
 }

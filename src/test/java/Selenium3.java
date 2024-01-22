@@ -23,9 +23,5 @@ public class Selenium3 {
 
         driver.findElement(By.xpath("/html/body/div[5]/div/div[9]/div/div[2]/div[2]/div/div/div[1]/div/div/div/div/div/div/div/div[1]/div/span/a/h3"))
                 .click();
-
-
-
-
     }
 }

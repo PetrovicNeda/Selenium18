@@ -7,7 +7,7 @@ import org.testng.Assert;
 
 import static org.openqa.selenium.Keys.ENTER;
 
-public class p15_01_2024_Zadatak4 {
+public class P15_01_2024_Zadatak4 {
     public static void main(String[] args) {
         //Zadatak 3
         //Otici na Google
@@ -52,7 +52,5 @@ public class p15_01_2024_Zadatak4 {
         WebElement pageImage = driver.findElement(By.className("infobox-image"));
 
         Assert.assertTrue(pageImage.isDisplayed()); //proveravamo da li je u redu tako sto umesto True ukucamo False, trebalo bi da padne test
-
-
     }
 }

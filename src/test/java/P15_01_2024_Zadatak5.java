@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class p15_01_2024_Zadatak5 {
+public class P15_01_2024_Zadatak5 {
     public static void main(String[] args) {
         /*
         // Zadatak 5
@@ -60,7 +60,5 @@ Provera da li je id = username jedinstven na stranici
 
         WebElement welocmeText = driver.findElement(By.className("has-text-align-center"));
         Assert.assertEquals(welocmeText.isDisplayed(), welocmeText.getText());
-
-
     }
 }

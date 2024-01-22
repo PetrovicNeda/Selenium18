@@ -1,4 +1,4 @@
-package d16_01_2024_Zadatak1;
+package D16_01_2024_Zadatak1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -7,10 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class Test4 {
+public class Test1 {
     public static void main(String[] args) {
 
-        //Empty username, valid password
+        //Invalid username, valid password
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -23,7 +23,11 @@ public class Test4 {
         WebElement testLogInPageButton = driver.findElement(By.linkText("Test Login Page"));
         testLogInPageButton.click();
 
+        String invalidUsername = "Student1";
         String validPassword = "Password123";
+
+        WebElement usernameBox = driver.findElement(By.id("username"));
+        usernameBox.sendKeys(invalidUsername);
 
         WebElement passwordBox = driver.findElement(By.id("password"));
         passwordBox.sendKeys(validPassword);
@@ -37,6 +41,5 @@ public class Test4 {
         Assert.assertEquals(errorMessage.getText(), "Your username is invalid!");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://practicetestautomation.com/practice-test-login/");
-
     }
 }

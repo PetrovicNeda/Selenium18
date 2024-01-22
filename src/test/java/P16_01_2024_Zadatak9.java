@@ -7,7 +7,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class p16_01_2024_Zadatak9 {
+public class P16_01_2024_Zadatak9 {
     public static void main(String[] args) throws InterruptedException {
         /*Zadatak 9
 https://www.amazon.com/Selenium-Framework-Design-Data-Driven-Testing/dp/1788473574/ref=sr_1_2?dchild=1&keywords=selenium+test&qid=1631829742&sr=8-2

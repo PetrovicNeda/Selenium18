@@ -8,7 +8,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class d15_01_2024_Zadatak1 {
+public class D15_01_2024_Zadatak1 {
     public static void main(String[] args) {
         //Domaci Zadatak 2:
 //https://demoqa.com/text-box napisati test case za dati text box
@@ -63,20 +63,5 @@ public class d15_01_2024_Zadatak1 {
         String enteredPermanentAddress = enteredPermanentAddressBox.get(1).getText();
         String expectedPermanentAddress = "Permananet Address :Adresa1";
         Assert.assertEquals(enteredPermanentAddress, expectedPermanentAddress);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

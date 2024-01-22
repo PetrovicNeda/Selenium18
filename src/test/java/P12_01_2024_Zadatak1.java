@@ -2,7 +2,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class p12_01_2024_Zadatak1 {
+public class P12_01_2024_Zadatak1 {
     public static void main(String[] args) {
         //Zadatak 1
         //Pokrenite browser, idite na Linkedin sajt, uradite refresh, idite na Joberty sajt
@@ -19,7 +19,5 @@ public class p12_01_2024_Zadatak1 {
         driver.navigate().back();
         System.out.println(driver.getCurrentUrl());
         driver.quit();
-
-
     }
 }

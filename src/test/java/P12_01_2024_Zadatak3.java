@@ -3,7 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class p12_01_2024_Zadatak3 {
+public class P12_01_2024_Zadatak3 {
     public static void main(String[] args) {
         //Zadatak 3
         //Otici na Google

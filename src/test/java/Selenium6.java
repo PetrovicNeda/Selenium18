@@ -20,6 +20,5 @@ public class Selenium6 {
 
         driver.manage().deleteAllCookies();
         driver.navigate().refresh();
-
     }
 }

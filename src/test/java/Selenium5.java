@@ -18,5 +18,4 @@ public class Selenium5 {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']")));
     */
     }
-
 }

@@ -74,7 +74,6 @@ public class Selenium9 {
         validPassword = "Password123";
         invalidPassword = "password";
         loggedInURL = "https://practicetestautomation.com/logged-in-successfully/";
-
     }
 
     @Test(priority = 10)
@@ -102,7 +101,6 @@ public class Selenium9 {
 
         Assert.assertEquals(errorMessage, "Your username is invalid!");
         Assert.assertNotEquals(driver.getCurrentUrl(), loggedInURL);
-
     }
 
     @Test(priority = 30)
@@ -117,7 +115,5 @@ public class Selenium9 {
 
         Assert.assertEquals(errorMessage, "Your password is invalid!");
         Assert.assertNotEquals(driver.getCurrentUrl(), loggedInURL);
-
     }
-
 }

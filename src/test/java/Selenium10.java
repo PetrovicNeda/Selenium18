@@ -79,7 +79,6 @@ public class Selenium10 {
 
         Assert.assertEquals(errorMessage, "Your username is invalid!");
         Assert.assertNotEquals(driver.getCurrentUrl(), loggedInURL);
-
     }
 
     @Test(priority = 30)
@@ -94,7 +93,6 @@ public class Selenium10 {
 
         Assert.assertEquals(errorMessage, "Your password is invalid!");
         Assert.assertNotEquals(driver.getCurrentUrl(), loggedInURL);
-
     }
 
     @AfterClass
@@ -104,6 +102,4 @@ public class Selenium10 {
         // nakon sto se prvi test zavrsi
         driver.quit();
     }
-
-
 }

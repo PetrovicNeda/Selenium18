@@ -12,7 +12,7 @@ public class Selenium4 {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-//        WebDriverManager.firefoxdriver().setup(); gecko = firefox
+//        WebDriverManager.firefoxdriver().setup();
 //        WebDriver driver = new FirefoxDriver();
 
         driver.manage().window().maximize();
@@ -24,13 +24,13 @@ public class Selenium4 {
         driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/div/textarea")).sendKeys("Wikipedia");
         driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/div/textarea")).sendKeys(ENTER);
 */
-        // Skracena verzija koda iznad
-//        WebElement searchBox = driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/div/textarea\""));
-//        searchBox.sendKeys("IT Bootcamp");
-//        searchBox.sendKeys(ENTER);
-//        driver.navigate().back();
-//        searchBox.sendKeys("Wikipedia");
-//        searchBox.sendKeys(ENTER);
+//         Skracena verzija koda iznad
+        WebElement searchBox = driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/div/textarea\""));
+        searchBox.sendKeys("IT Bootcamp");
+        searchBox.sendKeys(ENTER);
+        driver.navigate().back();
+        searchBox.sendKeys("Wikipedia");
+        searchBox.sendKeys(ENTER);
 
         //LOKATORI
 
@@ -57,10 +57,5 @@ public class Selenium4 {
 
 //        Absolute Xpath - Poslednji po hijerarhiji, najnestabilniji, moze se koristiti na pocetku dok se kreiraju testovi, ali zahteva
         WebElement searchBoxAbsoluteXpath = driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/div/textarea\""));
-
-
-
-
-
     }
 }

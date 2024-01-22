@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class d19_01_2024_Zadatak1 {
+public class D19_01_2024_Zadatak1 {
     /*
     Otici na sajt Herkouapp(https://the-internet.herokuapp.com/)
     i napisati sto vise test case-eva (Vas izbor sta cete testirati).

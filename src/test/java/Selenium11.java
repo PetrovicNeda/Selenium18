@@ -76,7 +76,6 @@ public class Selenium11 {
 
         Assert.assertEquals(errorMessage, "Your username is invalid!");
         Assert.assertNotEquals(driver.getCurrentUrl(), loggedInURL);
-
     }
 
     @Test(priority = 30)
@@ -91,7 +90,6 @@ public class Selenium11 {
 
         Assert.assertEquals(errorMessage, "Your password is invalid!");
         Assert.assertNotEquals(driver.getCurrentUrl(), loggedInURL);
-
     }
 
     @Test(priority = 40)
@@ -104,6 +102,7 @@ public class Selenium11 {
         Assert.assertEquals(errorMessage, "Your username is invalid!");
         Assert.assertNotEquals(driver.getCurrentUrl(), loggedInURL);
     }
+
     @Test(priority = 50)
     public void userCannotLogInWithEmptyPasswordField(){
         usernameField.sendKeys(validUsername);
@@ -113,6 +112,7 @@ public class Selenium11 {
         Assert.assertEquals(error.getText(), "Your password is invalid!");
         Assert.assertNotEquals(driver.getCurrentUrl(), loggedInURL);
     }
+
     @Test(priority = 60)
     public void userCannotLogInWithEmptyUsernameAndPasswordFields(){
         submitButton.click();
@@ -128,6 +128,4 @@ public class Selenium11 {
         // Ako bismo stavili quit u AfterClass onda bi se samo poslednji browser zatvorio
         driver.quit();
     }
-
-
 }

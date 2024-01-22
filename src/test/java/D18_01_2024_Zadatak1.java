@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class d18_01_2024_Zadatak1 {
+public class D18_01_2024_Zadatak1 {
     /*
     Koristeci Anotacije - Ulogujte se na demoqa(https://demoqa.com/ -> Book Store Application) preko cookies-a,
     dodati dve knjige na svoj nalog, zatim se izlogovati brisanjem cookies-a.
@@ -30,7 +30,6 @@ public class d18_01_2024_Zadatak1 {
         WebDriverManager.chromedriver().setup();
         validUsername = "Korisnik";
         validPassword = "Korisnik123!";
-
     }
 
     @BeforeMethod
@@ -47,15 +46,15 @@ public class d18_01_2024_Zadatak1 {
     }
 
     @Test(priority = 10)
-    public void userCanLogInWithCookiesAddBooksInProfileAndLogOutDeletingCookies(){
+    public void userCanLogInWithCookiesAddBooksInProfileAndLogOutDeletingCookies() {
 
-        Cookie cookie = new Cookie("userName","korisnik");
+        Cookie cookie = new Cookie("userName", "korisnik");
         driver.manage().addCookie(cookie);
         Cookie cookie1 = new Cookie("userID", "394b04c8-cca1-428c-82ad-33950aeacf78");
         driver.manage().addCookie(cookie1);
-        Cookie cookie2 = new Cookie("expires","2024-01-27T15%3A18%3A56.723Z");
+        Cookie cookie2 = new Cookie("expires", "2024-01-27T15%3A18%3A56.723Z");
         driver.manage().addCookie(cookie2);
-        Cookie cookie3 = new Cookie("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IktvcmlzbmlrIiwicGFzc3dvcmQiOiJLb3Jpc25pazEyMyEiLCJpYXQiOjE3MDU3NjM5MzZ9.AfSxnr3nB2wxw6g9DnvwQ7Gx9YCtL85OtbYGMYN3lJg");
+        Cookie cookie3 = new Cookie("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IktvcmlzbmlrIiwicGFzc3dvcmQiOiJLb3Jpc25pazEyMyEiLCJpYXQiOjE3MDU3NjM5MzZ9.AfSxnr3nB2wxw6g9DnvwQ7Gx9YCtL85OtbYGMYN3lJg");
         driver.manage().addCookie(cookie3);
         driver.navigate().refresh();
 
@@ -78,11 +77,10 @@ public class d18_01_2024_Zadatak1 {
 
         WebElement checkingLogInButton = driver.findElement(By.id("login"));
         Assert.assertTrue(checkingLogInButton.isDisplayed());
-
     }
 
     @Test(priority = 20)
-    public void userCanLogInUsingLogInFormAndBooksAreStillOnProfile() throws InterruptedException {
+    public void userCanLogInUsingLogInFormAndBooksAreStillOnProfile() {
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("login")));
         WebElement logInButton = driver.findElement(By.id("login"));
@@ -97,9 +95,8 @@ public class d18_01_2024_Zadatak1 {
         WebElement logIn = driver.findElement(By.id("login"));
         logIn.click();
 
-        WebElement bookStoreAppButton = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[6]/span/div"));
-        js.executeScript("arguments[0].scrollIntoView(true);", bookStoreAppButton);
-
+        List<WebElement> bookStoreAppButton = driver.findElements(By.className("group-header"));
+        js.executeScript("arguments[0].scrollIntoView(true);", bookStoreAppButton.get(5));
 
         WebElement profileButton = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[6]/div/ul/li[3]"));
         profileButton.click();
@@ -126,7 +123,6 @@ public class d18_01_2024_Zadatak1 {
         for (int i = 0; i < books.size(); i++) {
             Assert.assertTrue(books.get(i).isDisplayed());
         }
-
     }
 
     @AfterMethod
